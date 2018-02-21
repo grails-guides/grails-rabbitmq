@@ -1,0 +1,13 @@
+gettingStarted:
+  title: Getting Started
+  requirements: What you will need
+  howto: How to complete the guide
+runningTheApp:
+  title: Running the Application
+rabbitMQ:
+  title: Message Queues - RabbitMQ
+  setupRabbit: Setup RabbitMQ service
+nextSteps:
+  title: Next Steps
+helpWithGrails:
+  title: Do you need help with Grails?
