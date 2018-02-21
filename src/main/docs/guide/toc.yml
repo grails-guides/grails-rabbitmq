@@ -7,6 +7,10 @@ runningTheApp:
 rabbitMQ:
   title: Message Queues - RabbitMQ
   setupRabbit: Setup RabbitMQ service
+singleApp:
+  title: Single Application - Internal MQ
+multiApp:
+  title: Multiple Applications - External MQ
 nextSteps:
   title: Next Steps
 helpWithGrails:
