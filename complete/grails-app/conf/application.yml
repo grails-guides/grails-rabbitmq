@@ -2,7 +2,7 @@
 grails:
     profile: web
     codegen:
-        defaultPackage: myapp
+        defaultPackage: demo
     spring:
         transactionManagement:
             proxies: false
@@ -131,12 +131,12 @@ environments:
                 defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
 
 #tag::mqConfig[]
-rabbitmq:
-    connections:
-      - name: main
-        host: localhost
-        username: guest
-        password: guest
-    queues:
-      - name: testqueue
+#rabbitmq:
+#    connections:
+#      - name: main
+#        host: localhost
+#        username: guest
+#        password: guest
+#    queues:
+#      - name: testqueue
 #end::mqConfig[]
