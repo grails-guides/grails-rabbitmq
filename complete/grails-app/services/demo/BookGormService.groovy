@@ -1,6 +1,5 @@
 package demo
 
-import grails.gorm.DetachedCriteria
 import grails.gorm.transactions.ReadOnly
 import groovy.transform.CompileDynamic
 import groovy.transform.CompileStatic

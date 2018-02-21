@@ -1,4 +1,4 @@
-package myapp
+package demo
 
 import com.budjb.rabbitmq.publisher.RabbitMessagePublisher
 

@@ -1,5 +1,6 @@
 package myapp
 
+import demo.TestController
 import grails.testing.web.controllers.ControllerUnitTest
 import spock.lang.Specification
 
