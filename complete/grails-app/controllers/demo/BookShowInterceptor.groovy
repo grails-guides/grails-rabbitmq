@@ -5,20 +5,16 @@ import groovy.transform.CompileStatic
 
 @CompileStatic
 class BookShowInterceptor {
-    // TODO Inject service which publishes messages to Rabbit - DONE
-    RabbitMessagePublisher rabbitMessagePublisher
+    RabbitMessagePublisher rabbitMessagePublisher  //<1>
 
-    BookShowInterceptor() {
+    BookShowInterceptor() { //<2>
         match(controller:"book", action:"show")
     }
 
-    boolean after() {
-        // TODO publish message via the injected service
-        final Book book = (Book) model.bookInstance
-        println book
-        println book.id
+    boolean after() { //<3>
+        final Book book = (Book) model.bookInstance //<4>
 
-        rabbitMessagePublisher.send {
+        rabbitMessagePublisher.send { //<5>
             routingKey = "bookQueue"
             body = [id: book.id, title: book.title]
         }

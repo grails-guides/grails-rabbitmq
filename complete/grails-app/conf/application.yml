@@ -139,5 +139,5 @@ rabbitmq:
         password: guest
     queues:
       - name: testqueue
-      - name: bookQueue
+      - name: bookQueue #<1>
 #end::mqConfig[]

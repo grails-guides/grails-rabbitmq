@@ -28,8 +28,10 @@ endpoints:
     enabled: false
     jmx:
         enabled: true
+#tag::serverPort[]
 server:
   port: 8090
+#end::serverPort[]
 
 ---
 grails:

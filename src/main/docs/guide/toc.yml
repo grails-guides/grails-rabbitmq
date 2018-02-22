@@ -9,8 +9,18 @@ rabbitMQ:
   setupRabbit: Setup RabbitMQ service
 singleApp:
   title: Single Application - Internal MQ
+  singleConfig: Configure our app
+  consumerOne: Create a consumer - (Receiver of messages)
+  producerOne: Create a producer - (Creator of messages)
+  executeOne: See it in action!
 multiApp:
   title: Multiple Applications - External MQ
+  multiConfig: Configure our apps
+  consumerTwo: Analytics consumer
+  producerTwo: Book hit producer
+  executeTwo: A symphony of messages
+rabbitManagement:
+  title: Rabbit Management
 nextSteps:
   title: Next Steps
 helpWithGrails:

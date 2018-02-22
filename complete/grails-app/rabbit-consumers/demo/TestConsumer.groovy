@@ -4,9 +4,11 @@ import com.budjb.rabbitmq.consumer.MessageContext
 
 class TestConsumer {
 
+    //tag::connectRabbit1[]
     static rabbitConfig = [
             queue: "testqueue"
     ]
+    //end::connectRabbit1[]
 
     /**
      * Handle an incoming RabbitMQ message.
@@ -15,8 +17,10 @@ class TestConsumer {
      * @param context Properties of the incoming message.
      * @return
      */
+    //tag::handleMessage1[]
     def handleMessage(String body, MessageContext context) {
-        println 'test ' + body
+        println body
         return "Hello to you, too!"
     }
+    //end::handleMessage1[]
 }

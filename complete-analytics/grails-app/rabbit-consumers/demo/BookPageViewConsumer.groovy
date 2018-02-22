@@ -4,9 +4,9 @@ import com.budjb.rabbitmq.consumer.MessageContext
 
 class BookPageViewConsumer {
 
-    BookPageViewGormService bookPageViewGormService
+    BookPageViewGormService bookPageViewGormService //<1>
 
-    static rabbitConfig = [
+    static rabbitConfig = [ //<2>
             queue: "bookQueue"
     ]
 
@@ -18,8 +18,7 @@ class BookPageViewConsumer {
      * @return
      */
     def handleMessage(Map body, MessageContext messageContext) {
-        // TODO: Handle messages
-        println 'testing ' + body
-        bookPageViewGormService.increment((Long) body.id, (String) body.title)
+        println body
+        bookPageViewGormService.increment((Long) body.id, (String) body.title) //<3>
     }
 }

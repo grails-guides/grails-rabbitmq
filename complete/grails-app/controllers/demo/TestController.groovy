@@ -3,15 +3,12 @@ package demo
 import com.budjb.rabbitmq.publisher.RabbitMessagePublisher
 
 class TestController {
-    RabbitMessagePublisher rabbitMessagePublisher
+    RabbitMessagePublisher rabbitMessagePublisher //<1>
 
     def index() {
-        def result =  rabbitMessagePublisher.rpc {
+        render rabbitMessagePublisher.rpc { //<2>
             routingKey = "testqueue"
             body = "Hello!"
-            timeout = 20 * 60 * 1000
         }
-        println 'TESTING INDEX'
-        render result
     }
 }
