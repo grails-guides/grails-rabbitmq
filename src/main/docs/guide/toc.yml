@@ -16,6 +16,8 @@ singleApp:
 multiApp:
   title: Multiple Applications - External MQ
   multiConfig: Configure our apps
+  originalAppGrails: Adding to our app
+  buildingAnalytics: Building our analytics app
   consumerTwo: Analytics consumer
   producerTwo: Book hit producer
   executeTwo: A symphony of messages
