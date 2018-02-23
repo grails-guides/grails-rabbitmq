@@ -6,4 +6,5 @@ http://start.grails.org/[Grails Application Forge].
 image::forgeDefault.png[]
 
 NOTE: In section 5 of this guide we will make use of multiple applications so in addition to the initial application there
-is also an initial-analytics application as well.
+is also an initial-analytics application as well. To generate your own analytics application from the forge use the `rest-api`
+profile.

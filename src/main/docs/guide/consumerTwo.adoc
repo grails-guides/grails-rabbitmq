@@ -22,4 +22,4 @@ include::complete-analytics/grails-app/rabbit-consumers/demo/BookPageViewConsume
 ----
 <1> Add our page view service
 <2> Tell our consumer which queue to connect to
-<3> Tell our consumer what to do when it receives a message
+<3> Tell our consumer what to do when it receives a message. Call our custom increment action.
