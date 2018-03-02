@@ -10,7 +10,7 @@ class BookPageViewDataServiceSpec extends Specification {
 
     def "test increments"() {
         expect:
-        bookPageViewDataService.findByBookId(2)
+        !bookPageViewDataService.findByBookId(2)
 
         when:
         bookPageViewDataService.increment(2, 'Practical Grails 3')
