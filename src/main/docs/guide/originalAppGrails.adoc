@@ -40,7 +40,7 @@ Then we need to actually create the book data with our `Bootstrap.groovy`
 [source,groovy]
 .grails-app/init/demo/Bootstrap.groovy
 ----
-include::{sourceDir}/grails-app/init/demo/Bootstrap.groovy[]
+include::{sourceDir}/grails-app/init/demo/BootStrap.groovy[]
 ----
 
 Lastly we update our url mapping so that our default url will display our list of books
