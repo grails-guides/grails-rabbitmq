@@ -16,8 +16,8 @@ interface IBookPageViewDataService {
     @Query("select $b.views from ${BookPageView b} where $b.bookId = $bookIdParam") // <1>
     List<Integer> findViewsByBookId(Long bookIdParam)
 
-    @Query("update ${BookPageView b} set ${b.views} = $viewsParam where $b.bookId = $bookIdParam") // <2>
-    Number updateViews(Long bookIdParam, Integer viewsParam)
+    @Query("update ${BookPageView b} set ${b.views} = ${b.views} + 1 where $b.bookId = $bookIdParam") // <2>
+    Number updateViews(Long bookIdParam)
 }
 
 @Service(BookPageView)
@@ -29,7 +29,7 @@ abstract class BookPageViewDataService implements IBookPageViewDataService {
         if (!views) {
             save(bookId, bookName, 1)
         } else {
-            updateViews(bookId, (views.first() + 1))
+            updateViews(bookId)
         }
     }
 }
