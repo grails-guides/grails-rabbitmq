@@ -9,14 +9,6 @@ To start we first need to add a `Book` domain.
 include::{sourceDir}/grails-app/domain/demo/Book.groovy[]
 ----
 
-Create default actions for our book leveraging data services.
-
-[source,groovy]
-.grails-app/services/demo/BookDataService.groovy
-----
-include::{sourceDir}/grails-app/services/demo/BookDataService.groovy[]
-----
-
 We will be using a custom `findAll` to return our list of books and for that we will need to use an additional `BookImage`
 object. First create your `BookImage` in the `src/main/groovy` directory
 
@@ -26,12 +18,12 @@ object. First create your `BookImage` in the `src/main/groovy` directory
 include::{sourceDir}/src/main/groovy/demo/BookImage.groovy[]
 ----
 
-Then create your custom `findAll`
+Create default CRUD actions for `Book` leveraging http://gorm.grails.org/latest/hibernate/manual/index.html#dataServices[GORM data services].
 
 [source,groovy]
-.grails-app/services/demo/BookGormService.groovy
+.grails-app/services/demo/BookDataService.groovy
 ----
-include::{sourceDir}/grails-app/services/demo/BookGormService.groovy[]
+include::{sourceDir}/grails-app/services/demo/BookDataService.groovy[]
 ----
 
 Next connect our new controller up to the services that we just created. Our index will leverage our custom `findAll` to

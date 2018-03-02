@@ -5,24 +5,17 @@ gettingStarted:
   requirements: What you will need
   howto: How to complete the guide
 runningTheApp:
-  title: Running the Application
+  title: Application Overview
 rabbitMQ:
   title: Message Queues - RabbitMQ
   setupRabbit: Setup RabbitMQ service
-singleApp:
-  title: Single Application - Internal MQ
-  singleConfig: Configure our app
-  consumerOne: Create a consumer - (Receiver of messages)
-  producerOne: Create a producer - (Creator of messages)
-  executeOne: See it in action!
-multiApp:
-  title: Multiple Applications - External MQ
-  multiConfig: Configure our apps
-  originalAppGrails: Adding to our app
-  buildingAnalytics: Building our analytics app
-  consumerTwo: Analytics consumer
-  producerTwo: Book hit producer
-  executeTwo: A symphony of messages
+originalAppGrails:
+  title: Books Application
+  bookApplicationRabbit: RabbitMQ publisher
+buildingAnalytics:
+  title: Building Analytics app
+  bookAnalyticsRabbit: RabbitMQ consumer
+running: Running the apps
 rabbitManagement:
   title: Rabbit Management
 nextSteps:

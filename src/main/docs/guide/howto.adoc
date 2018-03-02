@@ -1,10 +1,24 @@
-include::{commondir}/common-howto.adoc[]
+To get started do the following:
 
-If you want to start from scratch, create a new Grails 3 application using
-http://start.grails.org/[Grails Application Forge].
+* link:https://github.com/{githubSlug}/archive/master.zip[Download] and unzip the source
 
-image::forgeDefault.png[]
+or
 
-NOTE: In section 5 of this guide we will make use of multiple applications so in addition to the initial application there
-is also an initial-analytics application as well. To generate your own analytics application from the forge use the `rest-api`
-profile.
+* Clone the https://git-scm.com/[Git] repository: +
+`git clone https://github.com/{githubSlug}.git`
+
+The Grails guides repositories contain three folders:
+
+* `initial`  Initial project. Often a simple Grails app with some additional code to give you a head-start.
+* `complete`
+* `complete-analytics`
+
+In this guide you are going to create two Grails Applications. Both `complete` and `complete-analytics` apps are a completed example. It is the result of working through the steps presented by the guide and applying those changes to the `initial` folder.
+
+To complete the guide, go to the `initial` folder
+
+* `cd` into `{githubSlug}/initial`
+
+and follow the instructions in the next sections.
+
+TIP: You can go right to the **completed example** if you `cd` into `{githubSlug}/complete` and `{githubSlug}/complete-analytics`.

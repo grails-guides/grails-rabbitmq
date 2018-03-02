@@ -133,11 +133,11 @@ environments:
 #tag::mqConfig[]
 rabbitmq:
     connections:
-      - name: main
-        host: localhost
-        username: guest
-        password: guest
+      - name: main #<1>
+        host: localhost #<2>
+        port: 5672
+        username: guest  #<3>
+        password: guest  #<4>
     queues:
-      - name: testqueue
-      - name: bookQueue #<1>
+      - name: bookQueue #<5>
 #end::mqConfig[]

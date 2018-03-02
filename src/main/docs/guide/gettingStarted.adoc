@@ -1,4 +1,2 @@
-In this guide we will show you how to setup and use https://www.rabbitmq.com/[RabbitMQ] with a Grails 3 application. The
-first example will be a single application <<singleApp>> and our second will involve two separate applications <<multiApp>>.
-
+In this guide we will show you how to setup and use https://www.rabbitmq.com/[RabbitMQ] with a Grails 3 application.
 We will be using the http://plugins.grails.org/plugin/budjb/rabbitmq-native[rabbitmq-native] plugin

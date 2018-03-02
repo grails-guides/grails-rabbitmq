@@ -1,10 +1,14 @@
 package demo
 
 import com.budjb.rabbitmq.consumer.MessageContext
+import groovy.transform.CompileStatic
+import groovy.util.logging.Slf4j
 
+@Slf4j
+@CompileStatic
 class BookPageViewConsumer {
 
-    BookPageViewGormService bookPageViewGormService //<1>
+    BookPageViewDataService bookPageViewDataService //<1>
 
     static rabbitConfig = [ //<2>
             queue: "bookQueue"
@@ -18,7 +22,7 @@ class BookPageViewConsumer {
      * @return
      */
     def handleMessage(Map body, MessageContext messageContext) {
-        println body
-        bookPageViewGormService.increment((Long) body.id, (String) body.title) //<3>
+        log.debug '{}', body.toString()
+        bookPageViewDataService.increment((Long) body.id, (String) body.title) //<3>
     }
 }
