@@ -1,8 +1,10 @@
 package demo
 
 import grails.testing.mixin.integration.Integration
+import spock.lang.IgnoreIf
 import spock.lang.Specification
 
+@IgnoreIf( { System.getenv('TRAVIS') as boolean } )
 @Integration
 class BookPageViewDataServiceSpec extends Specification {
 
