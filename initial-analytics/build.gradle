@@ -5,7 +5,7 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath "gradle.plugin.com.energizedwork.webdriver-binaries:webdriver-binaries-gradle-plugin:1.1"
+        classpath "gradle.plugin.com.energizedwork.webdriver-binaries:webdriver-binaries-gradle-plugin:1.4"
         classpath "gradle.plugin.com.energizedwork:idea-gradle-plugins:1.4"
         classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
         classpath "org.grails.plugins:views-gradle:1.1.6"
@@ -21,14 +21,21 @@ apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"com.energizedwork.webdriver-binaries"
 apply plugin:"com.energizedwork.idea-project-components"
-apply plugin:"org.grails.plugins.views-json"
 
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
 }
 
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
 dependencies {
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.grails:grails-core"
@@ -47,7 +54,7 @@ dependencies {
     compile "org.grails.plugins:async"
     compile "org.grails.plugins:events"
     compile "org.grails.plugins:hibernate5"
-    compile "org.hibernate:hibernate-core:5.1.5.Final"
+    compile "org.hibernate:hibernate-core:5.3.7.Final"
     compile "org.grails.plugins:views-json"
     compile "org.grails.plugins:views-json-templates"
     console "org.grails:grails-console"
@@ -55,24 +62,28 @@ dependencies {
     runtime "org.glassfish.web:el-impl:2.1.2-b03"
     runtime "com.h2database:h2"
     runtime "org.apache.tomcat:tomcat-jdbc"
+    runtime "javax.xml.bind:jaxb-api:2.3.0"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.0.7"
     testCompile "org.grails:grails-gorm-testing-support"
-    testCompile "org.grails:grails-datastore-rest-client"
+    testCompile "org.mockito:mockito-core"
     testCompile "org.grails:grails-web-testing-support"
     testCompile "org.grails.plugins:geb"
-    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.6.0"
-    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.6.0"
-    testRuntime "org.seleniumhq.selenium:selenium-remote-driver:3.6.0"
-    testRuntime "org.seleniumhq.selenium:selenium-api:3.6.0"
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.12.0"
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.12.0"
+    testRuntime "org.seleniumhq.selenium:selenium-remote-driver:3.12.0"
+    testRuntime "org.seleniumhq.selenium:selenium-api:3.12.0"
 }
 
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
-    addResources = true
+    sourceResources sourceSets.main
+    String springProfilesActive = 'spring.profiles.active'
+    systemProperty springProfilesActive, System.getProperty(springProfilesActive)
 }
 
 webdriverBinaries {
-    chromedriver '2.32'
-    geckodriver '0.18.0'
+    chromedriver '2.45'
+    geckodriver '0.23.0'
 }
 
 tasks.withType(Test) {
