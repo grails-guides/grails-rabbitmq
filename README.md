@@ -1,2 +1,11 @@
-# grails-rabbitmq
-A guide on how to setup and use the rabbitmq-native plugin
+# Message Queues with Grails 3 and RabbitMQ
+
+This repository contains the worked sample app for the [Message Queues with Grails 3 and RabbitMQ](https://grails.apache.org/guides/grails-rabbitmq/4/guide/index.html) guide on the Apache Grails site.
+
+## Run the example
+
+`./gradlew bootRun`
+
+## Maintained at apache/grails-static-website
+
+The guide narrative is maintained at https://github.com/apache/grails-static-website. Changes to the guide content go there; this repo holds the worked sample app only.
